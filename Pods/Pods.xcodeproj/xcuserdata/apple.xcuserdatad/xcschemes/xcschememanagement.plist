@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FCFileManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GCJSONKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SqliteTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1384F011D11D7B4AE29342DA311113DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17A20FA853126C8D0070944735FDD8E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CAC075D5F43244DEF8953762B40BED06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF9EC082F0F2040101F322C0E90D82BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+
+{
+    "table": "user_friends",
+    "comment": "用户好友表",
+    "key": "USER_CODE",
+    "cols": [{"name": "USER_CODE", "type": "TEXT"},
+    {"name": "USER_NAME", "type": "TEXT"},
+    {"name": "FRIEND_CODE", "type": "TEXT"},
+    {"name": "USER_IMG_SRC", "type": "TEXT"},
+    {"name": "USER_SHORT_NAME", "type": "TEXT"},
+    {"name": "USER_EN_NAME", "type": "TEXT"},
+    {"name": "USER_SEX", "type": "TEXT"},
+    {"name": "DEPT_NAME", "type": "TEXT"},
+    {"name": "USER_POST", "type": "TEXT"}]
+}
