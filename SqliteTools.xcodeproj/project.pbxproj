@@ -560,7 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/apple/Desktop/SqliteTools/SqliteTools-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SqliteTools-Prefix.pch";
 				INFOPLIST_FILE = SqliteTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "----.SqliteTools";
@@ -575,7 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/apple/Desktop/SqliteTools/SqliteTools-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SqliteTools-Prefix.pch";
 				INFOPLIST_FILE = SqliteTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "----.SqliteTools";
