@@ -145,6 +145,8 @@
         // 拼接insertSQL 语句  采用 replace 插入
         NSString *insertSQL = [NSString stringWithFormat:@"replace into %@(%@) values(%@)", table, insertKey, insertValuesString];
         execute = [db executeUpdate:insertSQL withArgumentsInArray:insertValues];
+        //打印日志,如果在主线程执行,方便查找
+        [self printSQLLog:insertSQL values:insertValues];
         
     }];
     return execute;
@@ -166,6 +168,8 @@
             [deleteSQL appendString:sqlwhere];
         }
         execute = [db executeUpdate:deleteSQL withArgumentsInArray:valuearray];
+        //打印日志,如果在主线程执行,方便查找
+        [self printSQLLog:deleteSQL values:valuearray];
 
     }];
     return execute;
@@ -193,6 +197,8 @@
         }
         NSMutableString *updateSQL = [NSMutableString stringWithFormat:@"update %@ set %@ where %@=?", table, updateKey,[updateValues lastObject]];
         execute = [db executeUpdate:updateSQL withArgumentsInArray:updateValues];
+        //打印日志,如果在主线程执行,方便查找
+        [self printSQLLog:updateSQL values:updateValues];
     }];
     return execute;
 }
@@ -221,6 +227,9 @@
         } else {
             set = [db executeQuery:query withArgumentsInArray:whereValues];
         }
+        //打印日志,如果在主线程执行,方便查找
+        [self printSQLLog:query values:whereValues];
+        
         
         while ([set next]) {
             NSDictionary *rowData = [self resultToDic:set];
@@ -312,5 +321,38 @@
     }
     return nil;
 }
+
+/**
+ *  打印出sql语句，便于查询问题，并且如果执行在主线程会给出提示
+ *
+ *  @param sql    sql语句
+ *  @param values 值
+ */
+- (void)printSQLLog:(NSString *)sql values:(NSArray *)values {
+    if ([NSThread isMainThread]) {
+        NSLog(@"请注意该SQL语句在主线程执行：%@", [self buildPrintSql:sql values:values]);
+    }
+}
+
+/**
+ *  构造日志sql语句，便于查看
+ *
+ *  @param sql    sql语句
+ *  @param values 值，如果为nil则sql是非预编译语句
+ *
+ *  @return 返回合成之后的sql
+ */
+- (NSString *)buildPrintSql:(NSString *)sql values:(NSArray *)values {
+    if (!values) {
+        return sql;
+    }
+    NSMutableString *mutableSql = [[NSMutableString alloc] initWithString:sql];
+    for (NSString *value in values) {
+        NSRange range = [mutableSql rangeOfString:@"?"];
+        [mutableSql replaceCharactersInRange:range withString:[NSString stringWithFormat:@"'%@'", value]];
+    }
+    return mutableSql;
+}
+
 
 @end
